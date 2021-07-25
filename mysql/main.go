@@ -1,3 +1,5 @@
+// https://noumenon-th.net/programming/2019/09/20/go-sql-driver/
+
 package main
 
 import (

@@ -1,0 +1,14 @@
+version: "3"
+services:
+  redis:
+    image: "redis:latest"
+    ports:
+      - "6379:6379"
+    volumes:
+      - "./data/redis:/data"
+
+  api-server:
+    build: ./go
+    ports:
+    - "1323:1323"
+    command: /go/src/sample/sample

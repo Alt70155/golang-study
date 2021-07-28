@@ -74,15 +74,13 @@ func main() {
 
 	var users UserSlice
 
-	if err := cacheTx.FindByQueryBuilder(rapidash.NewQueryBuilder("users").Eq("id", 1), &users); err != nil {
+	if err := cacheTx.FindByQueryBuilder(rapidash.NewQueryBuilder("users").Eq("id", 2), &users); err != nil {
 		log.Println(err)
 	}
 	// Commitしてキャッシュを更新する
 	if err := cacheTx.Commit(); err != nil {
 		log.Println(err)
 	}
-
-	cacheTx.Commit()
 
 	// api-server
 	e := echo.New()
